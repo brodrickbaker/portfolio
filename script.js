@@ -1,7 +1,7 @@
 import { SiPostgresql } from "react-icons/si";
 
 const postgres = () => {
-    consol.log("script run")
+    console.log("script run")
     return <SiPostgresql />
 }
 
