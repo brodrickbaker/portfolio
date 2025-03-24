@@ -110,7 +110,7 @@
 						<!-- Contact -->
 							<article id="contact">
 								<h2 class="major">Contact</h2>
-								<form method="post" action="#">
+								<form id="emailForm" method="post" action="#">
 									<div class="fields">
 										<div class="field half">
 											<label for="name">Name</label>
@@ -130,6 +130,27 @@
 										<li><input type="reset" value="Reset" /></li>
 									</ul>
 								</form>
+								<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    							<script>
+        							(function() {
+            							emailjs.init("0hjmqsNOBqW8RSaCm");
+        								})();
+
+        							document.getElementById('emailForm').addEventListener('submit', function(event) {
+            						event.preventDefault();
+
+            						const serviceID = 'service_rmpxonf';
+            						const templateID = 'template_7zmy67p';
+
+            						emailjs.sendForm(serviceID, templateID, this)
+                						.then(function() {
+                    						alert('Your message has been recieved');
+                    						document.getElementById('emailForm').reset();
+                							}, function(error) {
+                    							alert('Failed to send email. Please try again.');
+                								});
+        								});
+    							</script>
 								<ul class="icons">
 									<li><a href="www.linkedin.com/in/brodrick-baker" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
 									<li><a href="https://github.com/brodrickbaker" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
