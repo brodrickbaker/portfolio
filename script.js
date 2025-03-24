@@ -5,4 +5,4 @@ const postgres = () => {
     return <SiPostgresql />
 }
 
-export default postgres;
+postgres();
